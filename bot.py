@@ -26,7 +26,7 @@ QUESTIONS = [
     {"key": "About", "question": "✍️\n\nJust a few words about you + info about upcoming releases, projects and plans"},
     {"key": "Demo", "question": "Any fresh demos to share?\nOnly soundcloud link, please"},
     {"key": "Networks", "question": "👀\n\nSocial networks - ig, yt, bandcamp, tiktok"},
-    {"key": "E-mail", "question": "📝\n\nArtist e-mail"},
+    {"key": "Email", "question": "📝\n\nArtist e-mail"},  # <-- ключ изменён на Email
 ]
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -95,7 +95,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
                         "About": {"rich_text": [{"text": {"content": artist_data[chat_id].get("About", "")}}]},
                         "Demo": {"rich_text": [{"text": {"content": artist_data[chat_id].get("Demo", "")}}]},
                         "Networks": {"rich_text": [{"text": {"content": artist_data[chat_id].get("Networks", "")}}]},
-                        "E-mail": {"rich_text": [{"text": {"content": artist_data[chat_id].get("E-mail", "")}}]},
+                        "Email": {"rich_text": [{"text": {"content": artist_data[chat_id].get("Email", "")}}]},  # <-- ключ Email
                     }
                 )
             except Exception as e:
